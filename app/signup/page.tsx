@@ -38,7 +38,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#004b35]">
       {/* Navigation */}
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,8 +46,8 @@ export default function SignupPage() {
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
                 <Image 
-                  src="/ASC Verify.png" 
-                  alt="ASC Verify" 
+                  src="/LLSVerify Logo new.png" 
+                  alt="LLS Verify" 
                   width={500} 
                   height={167}
                   className="h-24 w-auto"
@@ -56,19 +56,19 @@ export default function SignupPage() {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <Link href="/" className="text-gray-600 hover:text-[#2563eb] px-3 py-2 rounded-md text-sm font-medium">
+                <Link href="/" className="text-gray-600 hover:text-[#c42a83] px-3 py-2 rounded-md text-sm font-medium">
                   Home
                 </Link>
-                <Link href="/about" className="text-gray-600 hover:text-[#2563eb] px-3 py-2 rounded-md text-sm font-medium">
+                <Link href="/about" className="text-gray-600 hover:text-[#c42a83] px-3 py-2 rounded-md text-sm font-medium">
                   About
                 </Link>
-                <Link href="/privacy" className="text-gray-600 hover:text-[#2563eb] px-3 py-2 rounded-md text-sm font-medium">
+                <Link href="/privacy" className="text-gray-600 hover:text-[#c42a83] px-3 py-2 rounded-md text-sm font-medium">
                   Privacy
                 </Link>
-                <Link href="/terms" className="text-gray-600 hover:text-[#2563eb] px-3 py-2 rounded-md text-sm font-medium">
+                <Link href="/terms" className="text-gray-600 hover:text-[#c42a83] px-3 py-2 rounded-md text-sm font-medium">
                   Terms
                 </Link>
-                <Link href="/signup" className="bg-[#2563eb] text-white hover:bg-[#1d4ed8] px-4 py-2 rounded-md text-sm font-medium">
+                <Link href="/signup" className="bg-[#c42a83] text-white hover:bg-[#a32269] px-4 py-2 rounded-md text-sm font-medium">
                   Get Started
                 </Link>
               </div>
@@ -78,13 +78,13 @@ export default function SignupPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-green-50 to-white py-12">
+      <section className="bg-gradient-to-b from-[#004b35] to-[#004b35] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
-              Get Started with ASC Verify
+            <h1 className="text-4xl font-extrabold text-white mb-4">
+              Get Started with LLS Verify
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-black max-w-2xl mx-auto">
               Fill out the form below and we'll get back to you within 24 hours to set up your account.
             </p>
           </div>
@@ -101,13 +101,13 @@ export default function SignupPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <h2 className="text-3xl font-bold text-black mb-4">Thank You!</h2>
+              <p className="text-lg text-black mb-8">
                 We've received your request. Our team will contact you within 24 hours to get you started.
               </p>
               <Link
                 href="/"
-                className="inline-block px-6 py-3 bg-[#2563eb] text-white font-semibold rounded-lg hover:bg-[#1d4ed8] transition-colors"
+                className="inline-block px-6 py-3 bg-[#c42a83] text-white font-semibold rounded-lg hover:bg-[#a32269] transition-colors"
               >
                 Return to Home
               </Link>
@@ -115,8 +115,8 @@ export default function SignupPage() {
           ) : (
             <>
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Sign Up for ASC Verify</h2>
-                <p className="text-gray-600">
+                <h2 className="text-2xl font-bold text-black mb-2">Sign Up for LLS Verify</h2>
+                <p className="text-black">
                   Complete the form below to start verifying your customers with confidence.
                 </p>
               </div>
@@ -138,7 +138,7 @@ export default function SignupPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2563eb] focus:border-transparent"
+                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
                       placeholder="John Doe"
                     />
                   </div>
@@ -160,7 +160,7 @@ export default function SignupPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2563eb] focus:border-transparent"
+                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -182,7 +182,7 @@ export default function SignupPage() {
                       required
                       value={formData.company}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2563eb] focus:border-transparent"
+                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
                       placeholder="Acme Inc."
                     />
                   </div>
@@ -203,7 +203,7 @@ export default function SignupPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2563eb] focus:border-transparent"
+                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -220,37 +220,37 @@ export default function SignupPage() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2563eb] focus:border-transparent"
-                    placeholder="How do you plan to use ASC Verify?"
+                    className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
+                    placeholder="How do you plan to use LLS Verify?"
                   />
                 </div>
 
                 {/* Consent Checkboxes */}
                 <div className="space-y-4">
                   {/* SMS Consent Checkbox */}
-                  <div className="bg-[#3b3a41] text-white rounded-lg p-6">
+                  <div className="bg-[#003d2b] text-white rounded-lg p-6">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
                         id="sms-consent"
-                        className="mt-1 h-4 w-4 text-[#2563eb] focus:ring-[#2563eb] border-gray-300 rounded flex-shrink-0"
+                        className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
                       <label htmlFor="sms-consent" className="ml-3 text-sm leading-relaxed">
-                        By checking this box, you provide consent to receive automated SMS messages from ASC Verify. Message frequency varies and message and data rates may apply. You may opt-out by replying 'STOP'. Reply 'HELP' for help or email support@ascverify.com. Consent is not required as a condition of purchasing any products or services.
+                        By checking this box, you provide consent to receive automated SMS messages from LLS Verify. Message frequency varies and message and data rates may apply. You may opt-out by replying 'STOP'. Reply 'HELP' for help or email support@llsverify.com. Consent is not required as a condition of purchasing any products or services.
                       </label>
                     </div>
                   </div>
 
                   {/* Call Consent Checkbox */}
-                  <div className="bg-[#3b3a41] text-white rounded-lg p-6">
+                  <div className="bg-[#003d2b] text-white rounded-lg p-6">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
                         id="call-consent"
-                        className="mt-1 h-4 w-4 text-[#2563eb] focus:ring-[#2563eb] border-gray-300 rounded flex-shrink-0"
+                        className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
                       <label htmlFor="call-consent" className="ml-3 text-sm leading-relaxed">
-                        By checking this box, you provide consent to receive automated customer care calls from ASC Verify. Call frequency varies and standard phone rates may apply. You may opt-out at any time by contacting support@ascverify.com. Consent is not required as a condition of purchasing any products or services.
+                        By checking this box, you provide consent to receive automated customer care calls from LLS Verify. Call frequency varies and standard phone rates may apply. You may opt-out at any time by contacting support@llsverify.com. Consent is not required as a condition of purchasing any products or services.
                       </label>
                     </div>
                   </div>
@@ -263,10 +263,10 @@ export default function SignupPage() {
                         id="account-notifications"
                         checked={accountNotifications}
                         onChange={(e) => setAccountNotifications(e.target.checked)}
-                        className="mt-1 h-4 w-4 text-[#2563eb] focus:ring-[#2563eb] border-gray-300 rounded flex-shrink-0"
+                        className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
                       <label htmlFor="account-notifications" className="ml-3 text-sm leading-relaxed text-gray-700">
-                        By checking this box, you consent to receive account notifications, service updates, and important information about your ASC Verify account via email and SMS. You may opt-out at any time by contacting support@ascverify.com or by following the unsubscribe instructions in our communications. Consent is not required as a condition of purchasing any products or services.
+                        By checking this box, you consent to receive account notifications, service updates, and important information about your LLS Verify account via email and SMS. You may opt-out at any time by contacting support@llsverify.com or by following the unsubscribe instructions in our communications. Consent is not required as a condition of purchasing any products or services.
                       </label>
                     </div>
                   </div>
@@ -277,15 +277,15 @@ export default function SignupPage() {
                       <input
                         type="checkbox"
                         id="terms-consent"
-                        className="mt-1 h-4 w-4 text-[#2563eb] focus:ring-[#2563eb] border-gray-300 rounded flex-shrink-0"
+                        className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
                       <label htmlFor="terms-consent" className="ml-3 text-sm leading-relaxed text-gray-700">
                         I agree with the{' '}
-                        <Link href="/terms" className="text-[#2563eb] hover:text-[#1d4ed8] font-medium underline">
+                        <Link href="/terms" className="text-[#c42a83] hover:text-[#a32269] font-medium underline">
                           Terms & Conditions
                         </Link>{' '}
                         and{' '}
-                        <Link href="/privacy" className="text-[#2563eb] hover:text-[#1d4ed8] font-medium underline">
+                        <Link href="/privacy" className="text-[#c42a83] hover:text-[#a32269] font-medium underline">
                           Privacy Policy
                         </Link>
                         .
@@ -301,7 +301,7 @@ export default function SignupPage() {
                   className={`w-full py-4 px-6 rounded-lg text-lg font-semibold transition-all ${
                     isSubmitting
                       ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-lg hover:shadow-xl'
+                      : 'bg-[#c42a83] hover:bg-[#a32269] text-white shadow-lg hover:shadow-xl'
                   }`}
                 >
                   {isSubmitting ? (
@@ -317,7 +317,7 @@ export default function SignupPage() {
                   )}
                 </button>
 
-                <p className="text-center text-sm text-gray-500">
+                <p className="text-center text-sm text-black">
                   Note: Web3Forms integration will be added in a future update.
                 </p>
               </form>
@@ -327,11 +327,11 @@ export default function SignupPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#3b3a41] text-white py-12 mt-20">
+      <footer className="bg-[#003d2b] text-white py-12 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">ASC Verify</h3>
+              <h3 className="text-xl font-bold mb-4">LLS Verify</h3>
               <p className="text-gray-400">
                 Carrier-compliant SMS verification for businesses.
               </p>
@@ -369,12 +369,12 @@ export default function SignupPage() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <p className="text-gray-400">
-                support@ascverify.com
+                support@llsverify.com
               </p>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 ASC Verify. All rights reserved.</p>
+            <p>&copy; 2025 LLS Verify. All rights reserved.</p>
           </div>
         </div>
       </footer>
