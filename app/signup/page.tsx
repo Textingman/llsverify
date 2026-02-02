@@ -13,9 +13,6 @@ export default function SignupPage() {
     phone: '',
     message: ''
   });
-  const [smsConsent, setSmsConsent] = useState(false);
-  const [emailConsent, setEmailConsent] = useState(false);
-  const [termsConsent, setTermsConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -40,7 +37,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#004b35]">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +83,7 @@ export default function SignupPage() {
             <h1 className="text-4xl font-extrabold text-white mb-4">
               Get Started with LLS Verify
             </h1>
-            <p className="text-xl text-black max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto">
               Fill out the form below and we'll get back to you within 24 hours to set up your account.
             </p>
           </div>
@@ -227,74 +224,51 @@ export default function SignupPage() {
                   />
                 </div>
 
-                {/* Transactional SMS Notice */}
-                <div className="block bg-blue-50 border border-blue-200 rounded-lg p-6">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0">
-                      <svg className="h-5 w-5 text-blue-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <div className="ml-3">
-                      <h4 className="text-sm font-semibold text-blue-900 mb-1">Transactional SMS Messages</h4>
-                      <p className="text-sm text-blue-800 leading-relaxed">
-                        Please note: If you use our verification service, you may receive transactional SMS messages (such as verification codes and account security alerts) as part of the service functionality. These messages are essential for service delivery and do not require separate opt-in consent. They are not marketing messages and are sent only when necessary for account verification and security purposes.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Consent Checkboxes */}
                 <div className="space-y-4">
-                  {/* SMS Marketing Consent Checkbox */}
-                  <div className="block bg-[#003d2b] text-white rounded-lg p-6">
+                    {/* SMS Marketing Consent Checkbox */}
+                  <div className="bg-gray-50 text-gray-900 rounded-lg p-6">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
                         id="sms-consent"
-                        checked={smsConsent}
-                        onChange={(e) => setSmsConsent(e.target.checked)}
                         className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
                       <label htmlFor="sms-consent" className="ml-3 text-sm leading-relaxed">
-                        <strong>SMS Marketing Consent (Optional):</strong> By checking this box, you consent to receive marketing and promotional SMS messages from LLS Verify, including service updates, feature announcements, and special offers. Message frequency: up to 4 messages per month. Message and data rates may apply. Reply STOP to opt-out at any time or HELP for assistance. You can also contact us at support@llsverify.com. View our{' '}
-                        <Link href="/terms" className="text-[#f8974e] hover:text-[#e6863d] underline">Terms</Link>
+                        I consent to receive text messages from LLS Verify, including form completion reminders, account verification requests, and service updates. Message frequency varies (up to 4 messages per month). Message and data rates may apply. Reply HELP for help or STOP to cancel. By opting in, you agree to our{' '}
+                        <Link href="/terms" className="text-[#c42a83] hover:text-[#a32269] underline">Terms of Service</Link>
                         {' '}and{' '}
-                        <Link href="/privacy" className="text-[#f8974e] hover:text-[#e6863d] underline">Privacy Policy</Link>
-                        . Consent is not required as a condition of purchasing or using any products or services.
+                        <Link href="/privacy" className="text-[#c42a83] hover:text-[#a32269] underline">Privacy Policy</Link>
+                        . Consent is not required to use our services.
                       </label>
                     </div>
                   </div>
 
                   {/* Email Marketing Consent Checkbox */}
-                  <div className="block bg-gray-50 border border-gray-300 rounded-lg p-6">
+                  <div className="bg-gray-50 text-gray-900 rounded-lg p-6">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
                         id="email-consent"
-                        checked={emailConsent}
-                        onChange={(e) => setEmailConsent(e.target.checked)}
                         className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
-                      <label htmlFor="email-consent" className="ml-3 text-sm leading-relaxed text-gray-700">
-                        <strong>Email Marketing Consent (Optional):</strong> By checking this box, you consent to receive marketing and promotional emails from LLS Verify, including newsletters, product updates, and special offers. You may unsubscribe at any time by clicking the unsubscribe link in our emails or by contacting support@llsverify.com. Consent is not required as a condition of purchasing or using any products or services.
+                      <label htmlFor="email-consent" className="ml-3 text-sm leading-relaxed">
+                        I consent to receive promotional emails from LLS Verify. You can unsubscribe at any time by following the unsubscribe link in our emails or by contacting support@llsverify.com.
                       </label>
                     </div>
                   </div>
 
                   {/* Terms & Privacy Policy Checkbox */}
-                  <div className="block bg-gray-50 border border-gray-300 rounded-lg p-6">
+                  <div className="bg-gray-50 border border-gray-300 rounded-lg p-6">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
                         id="terms-consent"
-                        checked={termsConsent}
-                        onChange={(e) => setTermsConsent(e.target.checked)}
                         required
                         className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
                       <label htmlFor="terms-consent" className="ml-3 text-sm leading-relaxed text-gray-700">
-                        <strong>Required:</strong> I agree to the{' '}
+                        I agree to the{' '}
                         <Link href="/terms" className="text-[#c42a83] hover:text-[#a32269] font-medium underline">
                           Terms & Conditions
                         </Link>{' '}
@@ -314,7 +288,7 @@ export default function SignupPage() {
                   disabled={isSubmitting}
                   className={`w-full py-4 px-6 rounded-lg text-lg font-semibold transition-all ${
                     isSubmitting
-                      ? 'bg-gray-400 cursor-not-allowed'
+                      ? 'bg-gray-400 cursor-not-allowed text-white'
                       : 'bg-[#c42a83] hover:bg-[#a32269] text-white shadow-lg hover:shadow-xl'
                   }`}
                 >
@@ -341,7 +315,7 @@ export default function SignupPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#003d2b] text-white py-12 mt-20">
+      <footer className="bg-gray-50 text-gray-900 py-12 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -354,12 +328,12 @@ export default function SignupPage() {
               <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-gray-400 hover:text-white">
+                  <Link href="/about" className="text-gray-400 hover:text-gray-900">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/signup" className="text-gray-400 hover:text-white">
+                  <Link href="/signup" className="text-gray-400 hover:text-gray-900">
                     Get Started
                   </Link>
                 </li>
@@ -369,12 +343,12 @@ export default function SignupPage() {
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/privacy" className="text-gray-400 hover:text-white">
+                  <Link href="/privacy" className="text-gray-400 hover:text-gray-900">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="text-gray-400 hover:text-white">
+                  <Link href="/terms" className="text-gray-400 hover:text-gray-900">
                     Terms of Service
                   </Link>
                 </li>
