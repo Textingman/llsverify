@@ -13,7 +13,9 @@ export default function SignupPage() {
     phone: '',
     message: ''
   });
-  const [accountNotifications, setAccountNotifications] = useState(false);
+  const [smsConsent, setSmsConsent] = useState(false);
+  const [emailConsent, setEmailConsent] = useState(false);
+  const [termsConsent, setTermsConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -123,7 +125,7 @@ export default function SignupPage() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Field */}
-                <div>
+                <div className="block">
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name *
                   </label>
@@ -138,14 +140,14 @@ export default function SignupPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
+                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent text-black"
                       placeholder="John Doe"
                     />
                   </div>
                 </div>
 
                 {/* Email Field */}
-                <div>
+                <div className="block">
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Business Email *
                   </label>
@@ -160,14 +162,14 @@ export default function SignupPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
+                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent text-black"
                       placeholder="john@company.com"
                     />
                   </div>
                 </div>
 
                 {/* Company Field */}
-                <div>
+                <div className="block">
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                     Company Name *
                   </label>
@@ -182,14 +184,14 @@ export default function SignupPage() {
                       required
                       value={formData.company}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
+                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent text-black"
                       placeholder="Acme Inc."
                     />
                   </div>
                 </div>
 
                 {/* Phone Field */}
-                <div>
+                <div className="block">
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number (Optional)
                   </label>
@@ -203,14 +205,14 @@ export default function SignupPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
+                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent text-black"
                       placeholder="(555) 123-4567"
                     />
                   </div>
                 </div>
 
                 {/* Message Field */}
-                <div>
+                <div className="block">
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Tell us about your use case (Optional)
                   </label>
@@ -220,67 +222,79 @@ export default function SignupPage() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent"
+                    className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#c42a83] focus:border-transparent text-black"
                     placeholder="How do you plan to use LLS Verify?"
                   />
                 </div>
 
+                {/* Transactional SMS Notice */}
+                <div className="block bg-blue-50 border border-blue-200 rounded-lg p-6">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <svg className="h-5 w-5 text-blue-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <h4 className="text-sm font-semibold text-blue-900 mb-1">Transactional SMS Messages</h4>
+                      <p className="text-sm text-blue-800 leading-relaxed">
+                        Please note: If you use our verification service, you may receive transactional SMS messages (such as verification codes and account security alerts) as part of the service functionality. These messages are essential for service delivery and do not require separate opt-in consent. They are not marketing messages and are sent only when necessary for account verification and security purposes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Consent Checkboxes */}
                 <div className="space-y-4">
-                  {/* SMS Consent Checkbox */}
-                  <div className="bg-[#003d2b] text-white rounded-lg p-6">
+                  {/* SMS Marketing Consent Checkbox */}
+                  <div className="block bg-[#003d2b] text-white rounded-lg p-6">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
                         id="sms-consent"
+                        checked={smsConsent}
+                        onChange={(e) => setSmsConsent(e.target.checked)}
                         className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
                       <label htmlFor="sms-consent" className="ml-3 text-sm leading-relaxed">
-                        By checking this box, you provide consent to receive automated SMS messages from LLS Verify. Message frequency varies and message and data rates may apply. You may opt-out by replying 'STOP'. Reply 'HELP' for help or email support@llsverify.com. Consent is not required as a condition of purchasing any products or services.
+                        <strong>SMS Marketing Consent (Optional):</strong> By checking this box, you consent to receive marketing and promotional SMS messages from LLS Verify, including service updates, feature announcements, and special offers. Message frequency: up to 4 messages per month. Message and data rates may apply. Reply STOP to opt-out at any time or HELP for assistance. You can also contact us at support@llsverify.com. View our{' '}
+                        <Link href="/terms" className="text-[#f8974e] hover:text-[#e6863d] underline">Terms</Link>
+                        {' '}and{' '}
+                        <Link href="/privacy" className="text-[#f8974e] hover:text-[#e6863d] underline">Privacy Policy</Link>
+                        . Consent is not required as a condition of purchasing or using any products or services.
                       </label>
                     </div>
                   </div>
 
-                  {/* Call Consent Checkbox */}
-                  <div className="bg-[#003d2b] text-white rounded-lg p-6">
+                  {/* Email Marketing Consent Checkbox */}
+                  <div className="block bg-gray-50 border border-gray-300 rounded-lg p-6">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
-                        id="call-consent"
+                        id="email-consent"
+                        checked={emailConsent}
+                        onChange={(e) => setEmailConsent(e.target.checked)}
                         className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
-                      <label htmlFor="call-consent" className="ml-3 text-sm leading-relaxed">
-                        By checking this box, you provide consent to receive automated customer care calls from LLS Verify. Call frequency varies and standard phone rates may apply. You may opt-out at any time by contacting support@llsverify.com. Consent is not required as a condition of purchasing any products or services.
-                      </label>
-                    </div>
-                  </div>
-
-                  {/* Account Notifications Opt-in Checkbox */}
-                  <div className="bg-gray-50 border border-gray-300 rounded-lg p-6">
-                    <div className="flex items-start">
-                      <input
-                        type="checkbox"
-                        id="account-notifications"
-                        checked={accountNotifications}
-                        onChange={(e) => setAccountNotifications(e.target.checked)}
-                        className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
-                      />
-                      <label htmlFor="account-notifications" className="ml-3 text-sm leading-relaxed text-gray-700">
-                        By checking this box, you consent to receive account notifications, service updates, and important information about your LLS Verify account via email and SMS. You may opt-out at any time by contacting support@llsverify.com or by following the unsubscribe instructions in our communications. Consent is not required as a condition of purchasing any products or services.
+                      <label htmlFor="email-consent" className="ml-3 text-sm leading-relaxed text-gray-700">
+                        <strong>Email Marketing Consent (Optional):</strong> By checking this box, you consent to receive marketing and promotional emails from LLS Verify, including newsletters, product updates, and special offers. You may unsubscribe at any time by clicking the unsubscribe link in our emails or by contacting support@llsverify.com. Consent is not required as a condition of purchasing or using any products or services.
                       </label>
                     </div>
                   </div>
 
                   {/* Terms & Privacy Policy Checkbox */}
-                  <div className="bg-gray-50 border border-gray-300 rounded-lg p-6">
+                  <div className="block bg-gray-50 border border-gray-300 rounded-lg p-6">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
                         id="terms-consent"
+                        checked={termsConsent}
+                        onChange={(e) => setTermsConsent(e.target.checked)}
+                        required
                         className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
                       <label htmlFor="terms-consent" className="ml-3 text-sm leading-relaxed text-gray-700">
-                        I agree with the{' '}
+                        <strong>Required:</strong> I agree to the{' '}
                         <Link href="/terms" className="text-[#c42a83] hover:text-[#a32269] font-medium underline">
                           Terms & Conditions
                         </Link>{' '}
@@ -288,7 +302,7 @@ export default function SignupPage() {
                         <Link href="/privacy" className="text-[#c42a83] hover:text-[#a32269] font-medium underline">
                           Privacy Policy
                         </Link>
-                        .
+                        . *
                       </label>
                     </div>
                   </div>
