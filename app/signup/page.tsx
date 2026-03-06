@@ -227,7 +227,7 @@ export default function SignupPage() {
                 {/* Consent Checkboxes */}
                 <div className="space-y-4">
                     {/* SMS Marketing Consent Checkbox */}
-                  <div className="bg-gray-50 text-gray-900 rounded-lg p-6">
+                  <div className="bg-gray-800 text-white rounded-lg p-6">
                     <div className="flex items-start">
                       <input
                         type="checkbox"
@@ -235,25 +235,7 @@ export default function SignupPage() {
                         className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
                       />
                       <label htmlFor="sms-consent" className="ml-3 text-sm leading-relaxed">
-                        I consent to receive text messages from LLS Verify, including form completion reminders, account verification requests, and service updates. Message frequency varies (up to 4 messages per month). Message and data rates may apply. Reply HELP for help or STOP to cancel. By opting in, you agree to our{' '}
-                        <Link href="/terms" className="text-[#c42a83] hover:text-[#a32269] underline">Terms of Service</Link>
-                        {' '}and{' '}
-                        <Link href="/privacy" className="text-[#c42a83] hover:text-[#a32269] underline">Privacy Policy</Link>
-                        . Consent is not required to use our services.
-                      </label>
-                    </div>
-                  </div>
-
-                  {/* Email Marketing Consent Checkbox */}
-                  <div className="bg-gray-50 text-gray-900 rounded-lg p-6">
-                    <div className="flex items-start">
-                      <input
-                        type="checkbox"
-                        id="email-consent"
-                        className="mt-1 h-4 w-4 text-[#c42a83] focus:ring-[#c42a83] border-gray-300 rounded flex-shrink-0"
-                      />
-                      <label htmlFor="email-consent" className="ml-3 text-sm leading-relaxed">
-                        I consent to receive promotional emails from LLS Verify. You can unsubscribe at any time by following the unsubscribe link in our emails or by contacting support@llsverify.com.
+                        By checking this box and submitting this form, you agree to receive account notification text messages from LLS Verify. I understand I may opt out of SMS communication by replying &apos;STOP&apos;. Reply HELP or email support@llsverify.com for help. Message and Data rates may apply. Message frequency varies. Carriers are not liable for delayed or undelivered messages. Opting in to SMS is optional and not required to submit this form. All messages will be handled by LLS Verify.
                       </label>
                     </div>
                   </div>
@@ -305,9 +287,6 @@ export default function SignupPage() {
                   )}
                 </button>
 
-                <p className="text-center text-sm text-black">
-                  Note: Web3Forms integration will be added in a future update.
-                </p>
               </form>
             </>
           )}

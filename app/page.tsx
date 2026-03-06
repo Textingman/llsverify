@@ -197,7 +197,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-[#003d2b] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-5 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">LLS Verify</h3>
               <p className="text-gray-400">
@@ -236,8 +236,15 @@ export default function HomePage() {
             </div>
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
+              <p className="text-gray-400">support@llsverify.com</p>
+              <p className="text-gray-400 mt-2">+1 732 320 7235</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Business Address</h4>
               <p className="text-gray-400">
-                support@llsverify.com
+                2000 NE 42nd Ave PMB 1251<br />
+                Portland, OR 97213<br />
+                United States of America
               </p>
             </div>
           </div>
