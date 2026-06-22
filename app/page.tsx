@@ -237,7 +237,7 @@ export default function HomePage() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <p className="text-gray-400">support@llsverify.com</p>
-              <p className="text-gray-400 mt-2">+1 732 320 7235</p>
+              <p className="text-gray-400 mt-2">+18444353969</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Business Address</h4>
