@@ -228,6 +228,9 @@ export default function AboutPage() {
               <p className="text-gray-400">
                 support@llsverify.com
               </p>
+              <p className="text-gray-400">
+                +18444353969
+              </p>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
